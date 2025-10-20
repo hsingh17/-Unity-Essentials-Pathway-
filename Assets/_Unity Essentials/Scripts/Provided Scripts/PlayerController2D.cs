@@ -6,7 +6,7 @@ public class PlayerController2D : MonoBehaviour
     public float speed = 5f; // The speed at which the player moves
     public bool canMoveDiagonally = true; // Controls whether the player can move diagonally
 
-    // Private variables 
+    // Private variables
     private Rigidbody2D rb; // Reference to the Rigidbody2D component attached to the player
     private Vector2 movement; // Stores the direction of player movement
     private bool isMovingHorizontally = true; // Flag to track if the player is moving horizontally
@@ -68,7 +68,10 @@ public class PlayerController2D : MonoBehaviour
     void RotatePlayer(float x, float y)
     {
         // If there is no input, do not rotate the player
-        if (x == 0 && y == 0) return;
+        if (x == 0 && y == 0)
+        {
+            return;
+        }
 
         // Calculate the rotation angle based on input direction
         float angle = Mathf.Atan2(y, x) * Mathf.Rad2Deg;
